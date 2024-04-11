@@ -1,0 +1,5 @@
+Reduce , sort, while inside for. For loops.
+Passbyvalue and passbyrefrence.
+Hackrank 2.
+Leecode 2.
+Calculator and todo list.
