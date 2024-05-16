@@ -1,22 +1,36 @@
 let buttonValue;
 let output = "";
-console.log("output", output);
+let result;
+
 let getButton = document
   .querySelectorAll(".buttonValue")
   .forEach((item, index) => {
     item.addEventListener("click", () => {
       displayFunction(item.textContent);
-      // equalValue(item.textContent);
     });
   });
 
 function displayFunction(itemValues) {
-  document.querySelectorAll(".inputValue2").forEach((item) => {
-    item.value += itemValues;
-  });
+  if (typeof itemValues == "number") {
+    document.querySelectorAll(".inputValue2").forEach((item) => {
+      item.value += "";
+    });
+  } else {
+    document.querySelectorAll(".inputValue2").forEach((item) => {
+      item.value += itemValues;
+    });
+  }
 }
+
+function anotherDisplay(itemValues) {
+  if (typeof itemValues == "number") {
+    document.querySelectorAll(".inputValue2").forEach((item) => {
+      item.value = itemValues;
+    });
+  }
+}
+
 function equalValues2() {
-  let result;
   document.querySelectorAll(".inputValue2").forEach((item) => {
     const expression = item.value.trim();
 
@@ -28,9 +42,8 @@ function equalValues2() {
     }
     return result;
   });
-  document.querySelectorAll(".inputValue2").forEach((item) => {
-    item.value = result;
-  });
+
+  anotherDisplay(result);
 }
 
 function clearValue() {
@@ -44,6 +57,5 @@ let getButton2 = document
   .forEach((item, index) => {
     item.addEventListener("click", () => {
       displayFunction(item.textContent);
-      // equalValue(item.textContent);
     });
   });
